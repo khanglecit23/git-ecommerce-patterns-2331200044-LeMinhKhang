@@ -7,16 +7,20 @@ class OrderTracker {
     }
 
     addObserver(observer) {
-        // TODO: Add the observer to the `this.observers` array.
+        // Add the observer to the `this.observers` array.
+        this.observers.push(observer); //[cite: 7]
     }
 
     removeObserver(observer) {
-        // TODO: Remove the observer from the `this.observers` array.
+        // Remove the observer from the `this.observers` array.
+        this.observers = this.observers.filter(obs => obs !== observer); //[cite: 7]
     }
 
     notifyObservers() {
-        // TODO: Loop through all observers and call their `update` method.
-        // Pass `this.orderId` and `this.status` to the update method.
+        // Loop through all observers and call their `update` method.
+        this.observers.forEach(observer => {
+            observer.update(this.orderId, this.status); //[cite: 7]
+        });
     }
 
     updateStatus(newStatus) {
@@ -36,16 +40,16 @@ class OrderObserver {
 // Concrete Observer 1
 class EmailNotifier extends OrderObserver {
     update(orderId, status) {
-        // TODO: Log a message to the console simulating an email notification.
-        // e.g., `Email: Order [orderId] is now [status].`
+        // Log a message to the console simulating an email notification.
+        console.log(`Email: Order ${orderId} is now ${status}.`); //[cite: 7]
     }
 }
 
 // Concrete Observer 2
 class DashboardNotifier extends OrderObserver {
     update(orderId, status) {
-        // TODO: Log a message to the console simulating a dashboard update.
-        // e.g., `Dashboard: Order [orderId] status updated to [status].`
+        // Log a message to the console simulating a dashboard update.
+        console.log(`Dashboard: Order ${orderId} status updated to ${status}.`); //[cite: 7]
     }
 }
 

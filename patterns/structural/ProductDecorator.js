@@ -20,11 +20,13 @@ class GiftWrapDecorator extends ProductDecorator {
     }
 
     getPrice() {
-        // TODO: Return the product's original price + a $5 gift wrap fee.
+        // Return the product's original price + a $5 gift wrap fee.
+        return super.getPrice() + 5; //[cite: 2]
     }
 
     getDescription() {
-        // TODO: Return the product's original description + ", gift wrapped".
+        // Return the product's original description + ", gift wrapped".
+        return super.getDescription() + ", gift wrapped"; //[cite: 2]
     }
 }
 
@@ -35,11 +37,13 @@ class ExtendedWarrantyDecorator extends ProductDecorator {
     }
 
     getPrice() {
-        // TODO: Return the product's original price + a $20 warranty fee.
+        // Return the product's original price + a $20 warranty fee.
+        return super.getPrice() + 20; //[cite: 2]
     }
 
     getDescription() {
-        // TODO: Return the product's original description + ", with extended warranty".
+        // Return the product's original description + ", with extended warranty".
+        return super.getDescription() + ", with extended warranty"; //[cite: 2]
     }
 }
 
@@ -57,4 +61,4 @@ class BaseProduct {
     }
 }
 
-export { ProductDecorator, GiftWrapDecorator, ExtendedWarrantyDecorator, BaseProduct };
+export { ProductDecorator, GiftWrapDecorator, ExtendedWarrantyDecorator, BaseProduct }; //[cite: 2]
